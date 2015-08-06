@@ -127,7 +127,6 @@ function loadfiles(_options, scope, done) {
                 return done(false);
             }
 
-            var step = this;
             _(locales).each(function (locale) {
                 var file;
                 var file_path = output_dir + '/' + locale + options.ext;
@@ -141,6 +140,8 @@ function loadfiles(_options, scope, done) {
                 file.contents = new Buffer(JSON.stringify(translations[locale], null, ' '));
                 scope.push(file);
             });
+            
+            this();
         },
         function finish(err) {
             if (err) {
