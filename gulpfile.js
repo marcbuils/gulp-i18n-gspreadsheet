@@ -4,7 +4,6 @@
 
 var gulp = require('gulp');
 var i18n = require('./tasks/i18n_gspreadsheet');
-var nodeInspector = require('gulp-node-debug');
 var gulpfile;
 
 gulpfile = {
